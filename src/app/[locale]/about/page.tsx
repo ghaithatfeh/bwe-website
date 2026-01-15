@@ -3,11 +3,8 @@
 import CustomHeroSection from "@/components/CustomHeroSection";
 import Heading from "@/components/Heading";
 import PageEnd from "@/components/PageEnd";
-import { Button } from "@/components/ui/button";
 import WorkSection from "@/components/WorkSection";
-import { Link } from "@/i18n/routing";
 import { useTranslations } from "next-intl";
-import { FaPaperPlane } from "react-icons/fa";
 
 const AboutPage = () => {
 	const t = useTranslations();
