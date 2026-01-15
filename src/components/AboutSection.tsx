@@ -34,7 +34,7 @@ const AboutSection = () => {
 						</Paragraph>
 						<div className="flex justify-start items-center mt-6">
 							<Link href="/about">
-								<Button variant="primary" size="primary">
+								<Button className="bg-primary rounded-full px-8 h-12">
 									{t("Know More")}
 								</Button>
 							</Link>
