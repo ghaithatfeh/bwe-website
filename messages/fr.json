@@ -87,5 +87,10 @@
     "pcs": "pièces",
     "Diameter Piece": "Diamètre pièce",
     "Sending": "Envoi",
-    "Thanks for reaching out! We’ll get back to you shortly": "Merci pour votre message ! Nous vous répondrons dans les plus brefs délais"
+    "Thanks for reaching out! We’ll get back to you shortly": "Merci pour votre message ! Nous vous répondrons dans les plus brefs délais",
+    "Showing products range": "Affichage de {from}-{to} sur {total} produits",
+    "Products pagination": "Pagination des produits",
+    "Previous": "Précédent",
+    "Next": "Suivant",
+    "Page": "Page"
 }

@@ -87,5 +87,10 @@
     "pcs": "pieces",
     "Diameter Piece": "Diameter Piece",
     "Sending": "Sending",
-    "Thanks for reaching out! We’ll get back to you shortly": "Thanks for reaching out! We’ll get back to you shortly"
+    "Thanks for reaching out! We’ll get back to you shortly": "Thanks for reaching out! We’ll get back to you shortly",
+    "Showing products range": "Showing {from}-{to} of {total} products",
+    "Products pagination": "Products pagination",
+    "Previous": "Previous",
+    "Next": "Next",
+    "Page": "Page"
 }

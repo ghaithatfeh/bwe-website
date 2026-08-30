@@ -86,5 +86,10 @@
     "pcs": "قطعة",
     "Diameter Piece": "قطر القطعة",
     "Sending": "جاري الإرسال",
-    "Thanks for reaching out! We’ll get back to you shortly": "شكرا لتواصلك! سنتواصل معك قريباً"
+    "Thanks for reaching out! We’ll get back to you shortly": "شكرا لتواصلك! سنتواصل معك قريباً",
+    "Showing products range": "عرض {from}-{to} من {total} منتج",
+    "Products pagination": "تصفح المنتجات",
+    "Previous": "السابق",
+    "Next": "التالي",
+    "Page": "صفحة"
 }
