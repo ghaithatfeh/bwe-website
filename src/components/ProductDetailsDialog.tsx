@@ -205,7 +205,7 @@ const ProductDetailsDialog = ({
 									<div>
 										<p className="text-sm text-[#6B7280]">{t("E-Mail")}</p>
 										<p className="font-semibold text-[#333333]" dir="ltr">
-											info@bestworldemballage.com
+											support@bestworldemballage.com
 										</p>
 									</div>
 								</div>

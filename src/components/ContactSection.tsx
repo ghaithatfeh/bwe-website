@@ -57,7 +57,7 @@ export const ContactSection = ({ withIcon = true }: { withIcon?: boolean }) => {
 			id: 2,
 			icon: <MailIcon className="w-5 h-5 text-white" />,
 			label: t("E-Mail"),
-			value: "info@bestworldemballage.com",
+			value: "support@bestworldemballage.com",
 			dir: "ltr",
 		},
 		{
