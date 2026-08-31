@@ -93,7 +93,7 @@ const Footer = () => {
 						<a href={socialLinks.whatsapp} target="_blank" rel="noopener noreferrer">
 							<FaWhatsapp className="w-5 h-5 text-white hover:text-green-400 transition" />
 						</a>
-						<a href="#" target="" rel="noopener noreferrer">
+						<a href={socialLinks.instagram} target="_blank" rel="noopener noreferrer">
 							<FaInstagram className="w-5 h-5 text-white hover:text-pink-500 transition" />
 						</a>
 						{/* <a href="#" target="_blank" rel="noopener noreferrer">

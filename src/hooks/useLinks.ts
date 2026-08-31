@@ -31,6 +31,7 @@ const useLinks = () => {
 	const socialLinks = {
 		facebook: "https://www.facebook.com/profile.php?id=100076417875791",
 		whatsapp: "https://wa.me/212696644134",
+		instagram: "https://www.instagram.com/best.world.emballage?igsi=MXhwMHBqazdsMGRrZw%3D%3D&utm_source=qr",
 	};
 
 	return { navLinks, socialLinks };
