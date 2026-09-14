@@ -10,6 +10,7 @@ import { useTranslations, useLocale } from "next-intl";
 import { useState } from "react";
 import { ChevronLeft, ChevronRight, X, Phone, Mail } from "lucide-react";
 import { Product } from "@/types/product";
+import { getColorSwatchStyle } from "@/lib/colors";
 
 interface ProductDetailsDialogProps {
 	open: boolean;
@@ -168,7 +169,7 @@ const ProductDetailsDialog = ({
 										<div
 											key={index}
 											className="w-12 h-12 rounded-full border-2 border-white shadow-lg cursor-pointer hover:scale-110 transition-transform"
-											style={{ backgroundColor: color }}
+											style={getColorSwatchStyle(color)}
 											title={color}
 										/>
 									))}

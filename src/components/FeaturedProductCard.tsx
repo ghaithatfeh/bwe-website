@@ -1,6 +1,7 @@
 "use client";
 
 import { Card } from "@/components/ui/card";
+import { getColorSwatchStyle } from "@/lib/colors";
 import { useTranslations } from "next-intl";
 
 interface FeaturedProductCardProps {
@@ -91,7 +92,7 @@ const FeaturedProductCard = ({
 								<div
 									key={index}
 									className="w-10 h-10 rounded-full border-2 border-white shadow-lg cursor-pointer hover:scale-110 transition-transform"
-									style={{ backgroundColor: color }}
+									style={getColorSwatchStyle(color)}
 									title={color}
 								/>
 							))}

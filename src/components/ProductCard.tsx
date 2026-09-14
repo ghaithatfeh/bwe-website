@@ -1,6 +1,7 @@
 "use client";
 
 import { Card } from "@/components/ui/card";
+import { getColorSwatchStyle } from "@/lib/colors";
 import { useLocale, useTranslations } from "next-intl";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
@@ -47,7 +48,7 @@ const ProductCard = ({
 							<div
 								key={index}
 								className="w-10 h-10 rounded-full border-2 border-white shadow-sm cursor-pointer hover:scale-110 transition-transform"
-								style={{ backgroundColor: color }}
+								style={getColorSwatchStyle(color)}
 								title={color}
 							/>
 						))}
