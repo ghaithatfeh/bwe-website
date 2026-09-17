@@ -92,5 +92,23 @@
     "Products pagination": "Pagination des produits",
     "Previous": "Précédent",
     "Next": "Suivant",
-    "Page": "Page"
+    "Page": "Page",
+    "Meta": {
+        "home": {
+            "title": "Emballage alimentaire et vaisselle plastique au Maroc",
+            "description": "Best World Emballage importe et distribue des emballages alimentaires hygiéniques et écoresponsables et de la vaisselle plastique jetable pour particuliers, cafés, restaurants et traiteurs au Maroc."
+        },
+        "about": {
+            "title": "À propos",
+            "description": "Découvrez Best World Emballage : plus de 10 ans d’expérience dans la fourniture d’emballages alimentaires sûrs et durables et d’ustensiles de table en plastique au Maroc."
+        },
+        "products": {
+            "title": "Produits",
+            "description": "Découvrez notre gamme de contenants alimentaires, gobelets, assiettes, couverts jetables et solutions d’emballage pour usage personnel et professionnel."
+        },
+        "contact": {
+            "title": "Contact",
+            "description": "Contactez Best World Emballage pour un devis, une commande en gros ou toute question produit. Tél : +212 696 644 134 – support@bestworldemballage.com."
+        }
+    }
 }

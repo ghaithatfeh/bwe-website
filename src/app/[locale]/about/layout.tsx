@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
-import { localeAlternates } from "@/lib/seo";
+import { pageMetadata } from "@/lib/seo";
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
 	const { locale } = await params;
-	return { alternates: localeAlternates(locale, "/about") };
+	return pageMetadata(locale, "about", "/about");
 }
 
 export default function Layout({ children }: { children: React.ReactNode }) {

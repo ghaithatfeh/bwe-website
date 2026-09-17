@@ -92,5 +92,23 @@
     "Products pagination": "Products pagination",
     "Previous": "Previous",
     "Next": "Next",
-    "Page": "Page"
+    "Page": "Page",
+    "Meta": {
+        "home": {
+            "title": "Food Packaging & Plastic Tableware in Morocco",
+            "description": "Best World Emballage imports and distributes hygienic, eco-conscious food packaging and disposable plastic tableware for homes, cafés, restaurants and caterers across Morocco."
+        },
+        "about": {
+            "title": "About Us",
+            "description": "Learn about Best World Emballage: 10+ years supplying safe, durable food packaging and plastic table tools to the Moroccan market."
+        },
+        "products": {
+            "title": "Products",
+            "description": "Browse our range of food containers, disposable cups, plates, cutlery and packaging solutions for personal and commercial use."
+        },
+        "contact": {
+            "title": "Contact Us",
+            "description": "Get in touch with Best World Emballage for quotes, wholesale orders and product inquiries. Call +212 696 644 134 or email support@bestworldemballage.com."
+        }
+    }
 }
