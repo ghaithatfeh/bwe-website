@@ -7,15 +7,21 @@ import { routing } from "@/i18n/routing";
 import { setRequestLocale } from "next-intl/server";
 import Footer from "@/components/Footer";
 import { Toaster } from "react-hot-toast";
+import { SITE_URL, localeAlternates } from "@/lib/seo";
 
-export const metadata: Metadata = {
-	title: "Best World Emballage",
-	description: "Best World Emballage",
-	icons: {
-		icon: "/favicon.ico",
-		apple: "/apple-touch-icon.png",
-	},
-};
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
+	const { locale } = await params;
+	return {
+		metadataBase: new URL(SITE_URL),
+		title: "Best World Emballage",
+		description: "Best World Emballage",
+		icons: {
+			icon: "/favicon.ico",
+			apple: "/apple-touch-icon.png",
+		},
+		alternates: localeAlternates(locale),
+	};
+}
 
 export function generateStaticParams() {
 	return routing.locales.map((locale) => ({ locale }));
