@@ -8,6 +8,7 @@ import { Product } from "@/types/product";
 import { Category } from "@/types/category";
 import { ProductCardSkeleton } from "@/components/skeletons/ProductCardSkeleton";
 import { usePagination } from "@/hooks/usePagination";
+import { normalizeColors } from "@/lib/colors";
 
 const PRODUCTS_PER_PAGE = 9;
 
@@ -91,7 +92,7 @@ export const ProductsGrid = ({
 							code={product.code}
 							title={product[`title_${locale}`]}
 							image={product.primary_image_url || ""}
-							colors={product.colors?.slice(0, 3) || []}
+							colors={normalizeColors(product.colors).slice(0, 3)}
 							additionalColors={product.additional_colors || 0}
 							onClick={() => onProductClick(product)}
 						/>

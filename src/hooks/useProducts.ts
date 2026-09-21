@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { toast } from "react-hot-toast";
 import { supabase } from "@/integrations/supabase/client";
 import { Product } from "@/types/product";
+import { normalizeColors } from "@/lib/colors";
 
 export const useProducts = () => {
 	const [products, setProducts] = useState<Product[]>([]);
@@ -21,7 +22,10 @@ export const useProducts = () => {
 				throw new Error(productsResult.error.message);
 			}
 
-			const data = productsResult.data || [];
+			const data: Product[] = (productsResult.data || []).map((p) => ({
+				...p,
+				colors: normalizeColors(p.colors),
+			}));
 			setProducts(data);
 		} catch (err) {
 			const error = err instanceof Error ? err : new Error("Failed to fetch products");

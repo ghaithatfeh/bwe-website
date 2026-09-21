@@ -5,6 +5,7 @@ import "swiper/css";
 import FeaturedProductCard from "@/components/FeaturedProductCard";
 import { Product } from "@/types/product";
 import { FeaturedProductSkeleton } from "@/components/skeletons/FeaturedProductSkeleton";
+import { normalizeColors } from "@/lib/colors";
 
 interface FeaturedProductsSectionProps {
 	products: Product[];
@@ -65,7 +66,7 @@ export const FeaturedProductsSection = ({
 										weight={product.weight?.toString()}
 										diameter={product.diameter?.toString()}
 										image={product.images?.[0] || ""}
-										colors={product.colors?.slice(0, 3) || []}
+										colors={normalizeColors(product.colors).slice(0, 3)}
 										additionalColors={product.additional_colors || 0}
 										onClick={() => onProductClick(product)}
 									/>
@@ -86,7 +87,7 @@ export const FeaturedProductsSection = ({
 								weight={product.weight?.toString()}
 								diameter={product.diameter?.toString()}
 								image={product.images?.[0] || ""}
-								colors={product.colors?.slice(0, 3) || []}
+								colors={normalizeColors(product.colors).slice(0, 3)}
 								additionalColors={product.additional_colors || 0}
 								onClick={() => onProductClick(product)}
 							/>

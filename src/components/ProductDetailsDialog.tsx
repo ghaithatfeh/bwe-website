@@ -10,7 +10,7 @@ import { useTranslations, useLocale } from "next-intl";
 import { useState } from "react";
 import { ChevronLeft, ChevronRight, X, Phone, Mail } from "lucide-react";
 import { Product } from "@/types/product";
-import { getColorSwatchStyle } from "@/lib/colors";
+import { getColorName, getColorSwatchStyle, normalizeColors } from "@/lib/colors";
 
 interface ProductDetailsDialogProps {
 	open: boolean;
@@ -31,7 +31,7 @@ const ProductDetailsDialog = ({
 	const [selectedImageIndex, setSelectedImageIndex] = useState(0);
 
 	const images = product.images || [];
-	const colors = product.colors || [];
+	const colors = normalizeColors(product.colors);
 
 	const handlePrevImage = () => {
 		setSelectedImageIndex((prev) =>
@@ -164,18 +164,30 @@ const ProductDetailsDialog = ({
 								<h3 className="text-lg font-bold text-[#333333]">
 									{t("Available Colors")}
 								</h3>
-								<div className="flex items-center gap-3 flex-wrap">
-									{colors.map((color, index) => (
-										<div
-											key={index}
-											className="w-12 h-12 rounded-full border-2 border-white shadow-lg cursor-pointer hover:scale-110 transition-transform"
-											style={getColorSwatchStyle(color)}
-											title={color}
-										/>
-									))}
+								<div className="flex items-start gap-4 flex-wrap">
+									{colors.map((color, index) => {
+										const name = getColorName(color, currentLocale);
+										return (
+											<div
+												key={index}
+												className="flex flex-col items-center gap-1 w-16"
+											>
+												<div
+													className="w-12 h-12 rounded-full border-2 border-white shadow-lg cursor-pointer hover:scale-110 transition-transform"
+													style={getColorSwatchStyle(color.value)}
+													title={name}
+												/>
+												<span className="text-xs text-[#333333] text-center leading-tight break-words w-full">
+													{name}
+												</span>
+											</div>
+										);
+									})}
 									{product.additional_colors && product.additional_colors > 0 && (
-										<div className="w-12 h-12 rounded-full bg-gray-200 border-2 border-white flex items-center justify-center text-[#333333] font-bold text-base cursor-pointer hover:scale-110 transition-transform shadow-lg">
-											+{product.additional_colors}
+										<div className="flex flex-col items-center gap-1 w-16">
+											<div className="w-12 h-12 rounded-full bg-gray-200 border-2 border-white flex items-center justify-center text-[#333333] font-bold text-base cursor-pointer hover:scale-110 transition-transform shadow-lg">
+												+{product.additional_colors}
+											</div>
 										</div>
 									)}
 								</div>

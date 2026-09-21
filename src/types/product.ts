@@ -1,3 +1,5 @@
+import type { ProductColor } from "@/lib/colors";
+
 export interface Product {
 	id: number;
 	code: string;
@@ -14,7 +16,7 @@ export interface Product {
 	quantity_bag: number;
 	quantity_box: number;
 	images: string[] | null;
-	colors: string[] | null;
+	colors: ProductColor[] | null;
 	additional_colors: number | null;
 	is_featured: boolean | null;
 	top_products: boolean | null;

@@ -13,6 +13,7 @@ import { useState } from "react";
 import { Product } from "@/types/product";
 import { useProducts } from "@/hooks/useProducts";
 import { ProductCardSkeleton } from "./skeletons/ProductCardSkeleton";
+import { normalizeColors } from "@/lib/colors";
 
 const AboutSection = () => {
 	const t = useTranslations();
@@ -70,7 +71,7 @@ const AboutSection = () => {
 									code={product.code}
 									title={product[`title_${locale}`]}
 									image={product.primary_image_url || ""}
-									colors={product.colors?.slice(0, 3) || []}
+									colors={normalizeColors(product.colors).slice(0, 3)}
 									additionalColors={product.additional_colors || 0}
 									onClick={() => handleProductClick(product)}
 								/>

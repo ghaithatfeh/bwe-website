@@ -1,8 +1,8 @@
 "use client";
 
 import { Card } from "@/components/ui/card";
-import { getColorSwatchStyle } from "@/lib/colors";
-import { useTranslations } from "next-intl";
+import { getColorName, getColorSwatchStyle, type ProductColor } from "@/lib/colors";
+import { useLocale, useTranslations } from "next-intl";
 
 interface FeaturedProductCardProps {
 	code: string;
@@ -12,7 +12,7 @@ interface FeaturedProductCardProps {
 	weight?: string;
 	diameter?: string;
 	image: string;
-	colors?: string[];
+	colors?: ProductColor[];
 	additionalColors?: number;
 	onClick?: () => void;
 }
@@ -30,6 +30,7 @@ const FeaturedProductCard = ({
 	onClick,
 }: FeaturedProductCardProps) => {
 	const t = useTranslations();
+	const locale = useLocale();
 
 	return (
 		<Card 
@@ -92,8 +93,8 @@ const FeaturedProductCard = ({
 								<div
 									key={index}
 									className="w-10 h-10 rounded-full border-2 border-white shadow-lg cursor-pointer hover:scale-110 transition-transform"
-									style={getColorSwatchStyle(color)}
-									title={color}
+									style={getColorSwatchStyle(color.value)}
+									title={getColorName(color, locale)}
 								/>
 							))}
 							{additionalColors > 0 && (

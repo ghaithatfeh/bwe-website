@@ -1,7 +1,7 @@
 "use client";
 
 import { Card } from "@/components/ui/card";
-import { getColorSwatchStyle } from "@/lib/colors";
+import { getColorName, getColorSwatchStyle, type ProductColor } from "@/lib/colors";
 import { useLocale, useTranslations } from "next-intl";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
@@ -9,7 +9,7 @@ interface ProductProps {
 	code: string;
 	title: string;
 	image: string;
-	colors?: string[];
+	colors?: ProductColor[];
 	additionalColors?: number;
 	onClick?: () => void;
 }
@@ -48,8 +48,8 @@ const ProductCard = ({
 							<div
 								key={index}
 								className="w-10 h-10 rounded-full border-2 border-white shadow-sm cursor-pointer hover:scale-110 transition-transform"
-								style={getColorSwatchStyle(color)}
-								title={color}
+								style={getColorSwatchStyle(color.value)}
+								title={getColorName(color, locale)}
 							/>
 						))}
 						{additionalColors > 0 && (
