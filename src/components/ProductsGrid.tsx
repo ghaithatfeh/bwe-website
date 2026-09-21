@@ -16,6 +16,7 @@ interface ProductsGridProps {
 	products: Product[];
 	loading: boolean;
 	selectedCategory: Category | null;
+	searchQuery?: string;
 	locale: "en" | "ar" | "fr";
 	onProductClick: (product: Product) => void;
 }
@@ -24,6 +25,7 @@ export const ProductsGrid = ({
 	products,
 	loading,
 	selectedCategory,
+	searchQuery = "",
 	locale,
 	onProductClick,
 }: ProductsGridProps) => {
@@ -44,8 +46,10 @@ export const ProductsGrid = ({
 	} = usePagination({
 		items: products,
 		pageSize: PRODUCTS_PER_PAGE,
-		resetKey: selectedCategory?.id ?? "all",
+		resetKey: `${selectedCategory?.id ?? "all"}|${searchQuery.trim().toLowerCase()}`,
 	});
+
+	const trimmedQuery = searchQuery.trim();
 
 	const scrollToTop = () => {
 		const top = gridTopRef.current?.getBoundingClientRect().top;
@@ -77,6 +81,14 @@ export const ProductsGrid = ({
 					</p>
 				)}
 			</div>
+
+			{!loading && totalItems === 0 && (
+				<p className="text-[#6B7280] text-base py-12 text-center">
+					{trimmedQuery
+						? t("No products match your search", { query: trimmedQuery })
+						: t("No products found")}
+				</p>
+			)}
 
 			<div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6">
 				{loading ? (
