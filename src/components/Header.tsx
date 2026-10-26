@@ -10,10 +10,11 @@ import { Link, usePathname } from "@/i18n/routing";
 import { FaFacebook, FaInstagram, FaLinkedin, FaWhatsapp } from "react-icons/fa";
 import { GrLanguage } from "react-icons/gr";
 import { Sheet, SheetTrigger, SheetContent } from "@/components/ui/sheet";
-import { MenuIcon, X } from "lucide-react";
+import { MenuIcon, UserRound, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { useLocale, useTranslations } from "next-intl";
 import useLinks from "@/hooks/useLinks";
+import useSession from "@/hooks/useSession";
 
 const Header = () => {
 	const locale = useLocale();
@@ -21,6 +22,10 @@ const Header = () => {
 	const pathname = usePathname();
 
 	const { navLinks, socialLinks } = useLinks();
+	const { user } = useSession();
+	const account = user
+		? { href: "/profile", label: t("Auth.account") }
+		: { href: "/signin", label: t("Auth.signIn") };
 
 	return (
 		<header className="bg-transparent absolute top-0 left-0 w-full z-50">
@@ -97,6 +102,14 @@ const Header = () => {
 							</DropdownMenuItem>
 						</DropdownMenuContent>
 					</DropdownMenu>
+
+					<Link
+						href={account.href}
+						className="flex items-center gap-2 text-white hover:text-secondary transition-colors"
+					>
+						<UserRound className="w-5 h-5" />
+						<span className="mt-1">{account.label}</span>
+					</Link>
 				</div>
 
 				{/* mobile menu */}
@@ -138,6 +151,18 @@ const Header = () => {
 										</Link>
 									</li>
 								))}
+								<li>
+									<Link
+										href={account.href}
+										className={cn(
+											"flex items-center gap-2 py-2 px-4 rounded hover:bg-gray-100 dark:hover:bg-gray-800 transition",
+											pathname.startsWith(account.href) && "bg-gray-100 text-secondary"
+										)}
+									>
+										<UserRound className="w-5 h-5" />
+										{account.label}
+									</Link>
+								</li>
 							</ul>
 							<div className="p-6 border-t border-gray-200 dark:border-gray-700">
 								<div className="flex justify-center gap-2 mb-4">

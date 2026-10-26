@@ -115,6 +115,62 @@
         "contact": {
             "title": "Contact Us",
             "description": "Get in touch with Best World Emballage for quotes, wholesale orders and product inquiries. Call +212 696 644 134 or email support@bestworldemballage.com."
+        },
+        "signin": {
+            "title": "Sign in",
+            "description": "Sign in to your Best World Emballage account with your phone number via WhatsApp."
+        },
+        "signup": {
+            "title": "Sign up",
+            "description": "Create your Best World Emballage account with your phone number in seconds."
+        },
+        "profile": {
+            "title": "My profile",
+            "description": "Manage your Best World Emballage account information."
         }
+    },
+    "Auth": {
+        "signIn": "Sign in",
+        "signUp": "Sign up",
+        "signInSubtitle": "Enter your phone number and we'll send you a verification code on WhatsApp.",
+        "signUpSubtitle": "Create your account in seconds. We'll verify your number on WhatsApp.",
+        "account": "My account",
+        "profile": "My profile",
+        "profileSubtitle": "Complete your information so we can serve you better.",
+        "firstName": "First name",
+        "lastName": "Last name",
+        "phone": "Phone number (WhatsApp)",
+        "phoneHint": "Moroccan numbers can start with 0. Other countries: include the country code, e.g. +33…",
+        "sendCode": "Send code via WhatsApp",
+        "sending": "Sending...",
+        "codeSentTo": "We sent a 6-digit code to <phone></phone> on WhatsApp.",
+        "code": "Verification code",
+        "verify": "Verify",
+        "verifying": "Verifying...",
+        "resend": "Resend code",
+        "resendIn": "Resend in {seconds}s",
+        "changeNumber": "Change number",
+        "or": "or",
+        "continueWithGoogle": "Continue with Google",
+        "continueWithFacebook": "Continue with Facebook",
+        "noAccount": "Don't have an account?",
+        "haveAccount": "Already have an account?",
+        "emailOptional": "Email (optional)",
+        "addressOptional": "Address (optional)",
+        "save": "Save",
+        "saving": "Saving...",
+        "saved": "Your profile has been saved.",
+        "signOut": "Sign out",
+        "phoneVerified": "Verified",
+        "noPhone": "No phone number linked to this account.",
+        "loading": "Loading...",
+        "nameRequired": "Please enter your first and last name.",
+        "invalidPhone": "Please enter a valid phone number.",
+        "invalidEmail": "Please enter a valid email address.",
+        "invalidCode": "The code is invalid or has expired.",
+        "accountNotFound": "No account found with this number. Please sign up first.",
+        "accountBlocked": "This account has been blocked. Please contact us.",
+        "tooManyRequests": "Too many attempts. Please wait a minute and try again.",
+        "genericError": "Something went wrong. Please try again."
     }
 }

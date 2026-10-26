@@ -115,6 +115,62 @@
         "contact": {
             "title": "Contact",
             "description": "Contactez Best World Emballage pour un devis, une commande en gros ou toute question produit. Tél : +212 696 644 134 – support@bestworldemballage.com."
+        },
+        "signin": {
+            "title": "Se connecter",
+            "description": "Connectez-vous à votre compte Best World Emballage avec votre numéro de téléphone via WhatsApp."
+        },
+        "signup": {
+            "title": "Créer un compte",
+            "description": "Créez votre compte Best World Emballage avec votre numéro de téléphone en quelques secondes."
+        },
+        "profile": {
+            "title": "Mon profil",
+            "description": "Gérez les informations de votre compte Best World Emballage."
         }
+    },
+    "Auth": {
+        "signIn": "Se connecter",
+        "signUp": "Créer un compte",
+        "signInSubtitle": "Saisissez votre numéro de téléphone et nous vous enverrons un code de vérification sur WhatsApp.",
+        "signUpSubtitle": "Créez votre compte en quelques secondes. Nous vérifierons votre numéro sur WhatsApp.",
+        "account": "Mon compte",
+        "profile": "Mon profil",
+        "profileSubtitle": "Complétez vos informations pour que nous puissions mieux vous servir.",
+        "firstName": "Prénom",
+        "lastName": "Nom",
+        "phone": "Numéro de téléphone (WhatsApp)",
+        "phoneHint": "Les numéros marocains peuvent commencer par 0. Autres pays : ajoutez l’indicatif, ex. +33…",
+        "sendCode": "Recevoir le code sur WhatsApp",
+        "sending": "Envoi...",
+        "codeSentTo": "Nous avons envoyé un code à 6 chiffres au <phone></phone> sur WhatsApp.",
+        "code": "Code de vérification",
+        "verify": "Vérifier",
+        "verifying": "Vérification...",
+        "resend": "Renvoyer le code",
+        "resendIn": "Renvoyer dans {seconds}s",
+        "changeNumber": "Changer de numéro",
+        "or": "ou",
+        "continueWithGoogle": "Continuer avec Google",
+        "continueWithFacebook": "Continuer avec Facebook",
+        "noAccount": "Vous n’avez pas de compte ?",
+        "haveAccount": "Vous avez déjà un compte ?",
+        "emailOptional": "E-mail (facultatif)",
+        "addressOptional": "Adresse (facultatif)",
+        "save": "Enregistrer",
+        "saving": "Enregistrement...",
+        "saved": "Votre profil a été enregistré.",
+        "signOut": "Se déconnecter",
+        "phoneVerified": "Vérifié",
+        "noPhone": "Aucun numéro de téléphone associé à ce compte.",
+        "loading": "Chargement...",
+        "nameRequired": "Veuillez saisir votre prénom et votre nom.",
+        "invalidPhone": "Veuillez saisir un numéro de téléphone valide.",
+        "invalidEmail": "Veuillez saisir une adresse e-mail valide.",
+        "invalidCode": "Le code est invalide ou a expiré.",
+        "accountNotFound": "Aucun compte trouvé avec ce numéro. Veuillez d’abord créer un compte.",
+        "accountBlocked": "Ce compte a été bloqué. Veuillez nous contacter.",
+        "tooManyRequests": "Trop de tentatives. Veuillez patienter une minute et réessayer.",
+        "genericError": "Une erreur est survenue. Veuillez réessayer."
     }
 }

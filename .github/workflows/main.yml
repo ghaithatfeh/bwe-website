@@ -27,6 +27,8 @@ jobs:
         env:
           NEXT_PUBLIC_SUPABASE_URL: ${{ secrets.NEXT_PUBLIC_SUPABASE_URL }}
           NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY: ${{ secrets.NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY }}
+          # Comma-separated social logins to show, e.g. "google,facebook". Enable them in Supabase first.
+          NEXT_PUBLIC_AUTH_PROVIDERS: ${{ vars.NEXT_PUBLIC_AUTH_PROVIDERS }}
 
       - name: 🚀 Deploy via FTP
         uses: ghaithatfeh/FTP-Deploy-Action@master
