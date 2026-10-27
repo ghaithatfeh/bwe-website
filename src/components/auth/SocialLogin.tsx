@@ -52,7 +52,7 @@ const SocialLogin = () => {
 						onClick={() => signIn(provider)}
 					>
 						{PROVIDERS[provider].icon}
-						{t(PROVIDERS[provider].label)}
+						<span className="mt-1">{t(PROVIDERS[provider].label)}</span>
 					</Button>
 				))}
 			</div>

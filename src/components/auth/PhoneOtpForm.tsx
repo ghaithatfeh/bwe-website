@@ -196,9 +196,9 @@ const PhoneOtpForm = ({ mode }: { mode: "signin" | "signup" }) => {
 				<p className="text-xs text-gray-500 ms-1">{t("phoneHint")}</p>
 			</div>
 			{errorMessage}
-			<Button type="submit" variant="primary" className="h-12" disabled={submitting}>
+			<Button type="submit" variant="primary" className="h-12 " disabled={submitting}>
 				<FaWhatsapp className="!size-5" />
-				{submitting ? t("sending") : t("sendCode")}
+				<span className="mt-1">{submitting ? t("sending") : t("sendCode")}</span>
 			</Button>
 			<p className="text-sm text-center text-gray-600">
 				{mode === "signup" ? t("haveAccount") : t("noAccount")}{" "}

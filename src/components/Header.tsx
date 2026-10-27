@@ -66,7 +66,7 @@ const Header = () => {
 					</ul>
 				</nav>
 				<div className="hidden md:flex items-center gap-4">
-					<a href={socialLinks.facebook} target="_blank" rel="noopener noreferrer">
+					{/* <a href={socialLinks.facebook} target="_blank" rel="noopener noreferrer">
 						<FaFacebook className="w-5 h-5 text-white hover:text-blue-400 transition" />
 					</a>
 					<a href={socialLinks.whatsapp} target="_blank" rel="noopener noreferrer">
@@ -75,7 +75,7 @@ const Header = () => {
 					<a href={socialLinks.instagram} target="_blank" rel="noopener noreferrer">
 						<FaInstagram className="w-5 h-5 text-white hover:text-pink-400 transition" />
 					</a>
-					{/* <a href="#" target="_blank" rel="noopener noreferrer">
+					<a href="#" target="_blank" rel="noopener noreferrer">
 						<FaLinkedin className="w-5 h-5 text-white hover:text-blue-400 transition" />
 					</a> */}
 
@@ -105,7 +105,10 @@ const Header = () => {
 
 					<Link
 						href={account.href}
-						className="flex items-center gap-2 text-white hover:text-secondary transition-colors"
+						className={cn([
+							"flex items-center gap-2 text-white hover:text-secondary transition-colors",
+							pathname.startsWith("/sign") ? "text-secondary" : "",
+						])}
 					>
 						<UserRound className="w-5 h-5" />
 						<span className="mt-1">{account.label}</span>
