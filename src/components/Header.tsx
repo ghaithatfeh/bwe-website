@@ -25,15 +25,17 @@ const Header = () => {
 	const { user } = useSession();
 	const account = user
 		? { href: "/profile", label: t("Auth.account") }
-		: { href: "/signin", label: t("Auth.signIn") };
+		: { href: "/account", label: t("Auth.signIn") };
 
 	return (
 		<header className="bg-transparent absolute top-0 left-0 w-full z-50">
 			<div className="container mx-auto flex items-center justify-between py-4">
-				<Link href="/" className="-ms-2">
-					<img src="/logo.svg" alt="logo" />
-				</Link>
-				<nav className="hidden md:block">
+				<div className="md:flex-1">
+					<Link href="/" className="-ms-2 inline-block">
+						<img src="/logo.svg" alt="logo" />
+					</Link>
+				</div>
+				<nav className="hidden md:block shrink-0">
 					<ul className="flex items-center gap-6 lg:gap-12">
 						{navLinks.map((item) => (
 							<li key={item.name} className="flex items-center gap-2">
@@ -55,7 +57,7 @@ const Header = () => {
 								<Link
 									href={item.href}
 									className={cn(
-										"text-white hover:text-secondary transition-colors",
+										"text-white text-lg hover:text-secondary transition-colors",
 										item.active && "text-secondary"
 									)}
 								>
@@ -65,7 +67,7 @@ const Header = () => {
 						))}
 					</ul>
 				</nav>
-				<div className="hidden md:flex items-center gap-4">
+				<div className="hidden md:flex flex-1 items-center justify-end gap-4">
 					{/* <a href={socialLinks.facebook} target="_blank" rel="noopener noreferrer">
 						<FaFacebook className="w-5 h-5 text-white hover:text-blue-400 transition" />
 					</a>
@@ -80,7 +82,7 @@ const Header = () => {
 					</a> */}
 
 					<DropdownMenu>
-						<DropdownMenuTrigger className="text-white flex items-center gap-2 outline-none hover:text-secondary transition-colors">
+						<DropdownMenuTrigger className="text-white text-sm flex items-center gap-2 outline-none hover:text-secondary transition-colors">
 							<GrLanguage className="w-5 h-5" />
 							<span className="mt-1">{locale.toUpperCase()}</span>
 						</DropdownMenuTrigger>
@@ -106,8 +108,8 @@ const Header = () => {
 					<Link
 						href={account.href}
 						className={cn([
-							"flex items-center gap-2 text-white hover:text-secondary transition-colors",
-							pathname.startsWith("/sign") ? "text-secondary" : "",
+							"flex items-center gap-2 text-white hover:text-secondary transition-colors text-sm",
+							pathname.startsWith(account.href) && "text-secondary",
 						])}
 					>
 						<UserRound className="w-5 h-5" />
@@ -162,7 +164,7 @@ const Header = () => {
 											pathname.startsWith(account.href) && "bg-gray-100 text-secondary"
 										)}
 									>
-										<UserRound className="w-5 h-5" />
+										<UserRound className="w-5 h-5 hidden md-block" />
 										{account.label}
 									</Link>
 								</li>

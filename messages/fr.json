@@ -116,13 +116,9 @@
             "title": "Contact",
             "description": "Contactez Best World Emballage pour un devis, une commande en gros ou toute question produit. Tél : +212 696 644 134 – support@bestworldemballage.com."
         },
-        "signin": {
+        "account": {
             "title": "Se connecter",
             "description": "Connectez-vous à votre compte Best World Emballage avec votre numéro de téléphone via WhatsApp."
-        },
-        "signup": {
-            "title": "Créer un compte",
-            "description": "Créez votre compte Best World Emballage avec votre numéro de téléphone en quelques secondes."
         },
         "profile": {
             "title": "Mon profil",

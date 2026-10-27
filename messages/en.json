@@ -116,13 +116,9 @@
             "title": "Contact Us",
             "description": "Get in touch with Best World Emballage for quotes, wholesale orders and product inquiries. Call +212 696 644 134 or email support@bestworldemballage.com."
         },
-        "signin": {
+        "account": {
             "title": "Sign in",
             "description": "Sign in to your Best World Emballage account with your phone number via WhatsApp."
-        },
-        "signup": {
-            "title": "Sign up",
-            "description": "Create your Best World Emballage account with your phone number in seconds."
         },
         "profile": {
             "title": "My profile",

@@ -6,17 +6,19 @@ import { FaWhatsapp } from "react-icons/fa";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { supabase } from "@/integrations/supabase/client";
-import { Link, useRouter } from "@/i18n/routing";
+import { useRouter } from "@/i18n/routing";
 import { OTP_LENGTH, OTP_RESEND_SECONDS, authErrorKey, normalizePhone } from "@/lib/auth";
 
 const inputClassName = "h-12 bg-white rounded-2xl focus:border-[#ffc85b] focus-visible:ring-0";
+
+export type AuthMode = "signin" | "signup";
 
 /**
  * Two steps: collect the phone (plus name when signing up), then verify the
  * code sent on WhatsApp. Sign-up and sign-in only differ in whether Supabase
  * may create the user.
  */
-const PhoneOtpForm = ({ mode }: { mode: "signin" | "signup" }) => {
+const PhoneOtpForm = ({ mode, onModeChange }: { mode: AuthMode; onModeChange: (mode: AuthMode) => void }) => {
 	const t = useTranslations("Auth");
 	const router = useRouter();
 
@@ -202,9 +204,13 @@ const PhoneOtpForm = ({ mode }: { mode: "signin" | "signup" }) => {
 			</Button>
 			<p className="text-sm text-center text-gray-600">
 				{mode === "signup" ? t("haveAccount") : t("noAccount")}{" "}
-				<Link href={mode === "signup" ? "/signin" : "/signup"} className="text-primary font-semibold hover:underline">
+				<button
+					type="button"
+					onClick={() => onModeChange(mode === "signup" ? "signin" : "signup")}
+					className="text-primary font-semibold hover:underline"
+				>
 					{mode === "signup" ? t("signIn") : t("signUp")}
-				</Link>
+				</button>
 			</p>
 		</form>
 	);

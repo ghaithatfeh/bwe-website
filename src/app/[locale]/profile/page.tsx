@@ -33,7 +33,7 @@ const ProfilePage = () => {
 	useEffect(() => {
 		if (sessionLoading) return;
 		if (!userId) {
-			router.replace("/signin");
+			router.replace("/account");
 			return;
 		}
 
