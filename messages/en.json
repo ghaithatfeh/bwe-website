@@ -167,6 +167,7 @@
         "accountNotFound": "No account found with this number. Please sign up first.",
         "accountBlocked": "This account has been blocked. Please contact us.",
         "tooManyRequests": "Too many attempts. Please wait a minute and try again.",
-        "genericError": "Something went wrong. Please try again."
+        "genericError": "Something went wrong. Please try again.",
+        "socialLoginFailed": "Social sign-in failed or was cancelled. Please try again."
     }
 }

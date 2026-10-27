@@ -6,6 +6,7 @@ import { NextIntlClientProvider } from "next-intl";
 import { routing } from "@/i18n/routing";
 import { setRequestLocale } from "next-intl/server";
 import Footer from "@/components/Footer";
+import AuthRedirectError from "@/components/auth/AuthRedirectError";
 import { Toaster } from "react-hot-toast";
 import { SITE_NAME, SITE_URL, pageMetadata } from "@/lib/seo";
 
@@ -45,6 +46,7 @@ export default async function RootLayout({
 					<Header />
 					{children}
 					<Toaster position="top-right" />
+					<AuthRedirectError />
 					<Footer />
 				</NextIntlClientProvider>
 			</body>

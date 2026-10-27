@@ -167,6 +167,7 @@
         "accountNotFound": "Aucun compte trouvé avec ce numéro. Veuillez d’abord créer un compte.",
         "accountBlocked": "Ce compte a été bloqué. Veuillez nous contacter.",
         "tooManyRequests": "Trop de tentatives. Veuillez patienter une minute et réessayer.",
-        "genericError": "Une erreur est survenue. Veuillez réessayer."
+        "genericError": "Une erreur est survenue. Veuillez réessayer.",
+        "socialLoginFailed": "La connexion a échoué ou a été annulée. Veuillez réessayer."
     }
 }
