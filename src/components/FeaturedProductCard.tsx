@@ -2,6 +2,7 @@
 
 import { Card } from "@/components/ui/card";
 import { getColorName, getColorSwatchStyle, type ProductColor } from "@/lib/colors";
+import { formatPrice } from "@/lib/price";
 import { useLocale, useTranslations } from "next-intl";
 
 interface FeaturedProductCardProps {
@@ -14,6 +15,7 @@ interface FeaturedProductCardProps {
 	image: string;
 	colors?: ProductColor[];
 	additionalColors?: number;
+	price?: number | null;
 	onClick?: () => void;
 }
 
@@ -27,6 +29,7 @@ const FeaturedProductCard = ({
 	image,
 	colors = [],
 	additionalColors = 0,
+	price,
 	onClick,
 }: FeaturedProductCardProps) => {
 	const t = useTranslations();
@@ -65,6 +68,13 @@ const FeaturedProductCard = ({
 					<h3 className="text-[#333333] text-xl font-bold my-3 leading-tight">
 						{title}
 					</h3>
+
+					{/* Product Price */}
+					{price != null && (
+						<p className="text-[#232B55] text-xl font-bold mb-3">
+							{formatPrice(price, locale)}
+						</p>
+					)}
 
 					{/* Product Specifications */}
 					<div className="space-y-1 mb-2">

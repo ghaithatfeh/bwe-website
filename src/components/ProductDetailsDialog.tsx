@@ -11,6 +11,7 @@ import { useState } from "react";
 import { ChevronLeft, ChevronRight, X, Phone, Mail } from "lucide-react";
 import { Product } from "@/types/product";
 import { getColorName, getColorSwatchStyle, normalizeColors } from "@/lib/colors";
+import { formatPrice } from "@/lib/price";
 
 interface ProductDetailsDialogProps {
 	open: boolean;
@@ -124,6 +125,13 @@ const ProductDetailsDialog = ({
 					<p className="text-[#DC2626] text-lg font-semibold">
 						{t("Product Code")}: {product.code}
 					</p>
+
+					{/* Product Price */}
+					{product.price != null && (
+						<p className="text-[#232B55] text-2xl font-bold">
+							{t("Price")}: {formatPrice(product.price, currentLocale)}
+						</p>
+					)}
 
 					{/* Product Description */}
 					<div className="space-y-1">

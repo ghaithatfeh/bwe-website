@@ -2,6 +2,7 @@
 
 import { Card } from "@/components/ui/card";
 import { getColorName, getColorSwatchStyle, type ProductColor } from "@/lib/colors";
+import { formatPrice } from "@/lib/price";
 import { useLocale, useTranslations } from "next-intl";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
@@ -11,6 +12,7 @@ interface ProductProps {
 	image: string;
 	colors?: ProductColor[];
 	additionalColors?: number;
+	price?: number | null;
 	onClick?: () => void;
 }
 
@@ -20,6 +22,7 @@ const ProductCard = ({
 	image,
 	colors = [],
 	additionalColors = 0,
+	price,
 	onClick,
 }: ProductProps) => {
 	const t = useTranslations();
@@ -72,6 +75,13 @@ const ProductCard = ({
 				<h3 className="text-[#333333] text-xl font-bold mb-3 leading-tight">
 					{title}
 				</h3>
+
+				{/* Product Price */}
+				{price != null && (
+					<p className="text-[#232B55] text-lg font-bold mb-3">
+						{formatPrice(price, locale)}
+					</p>
+				)}
 
 			{/* Learn More Link */}
 			<button

@@ -13,6 +13,7 @@ export interface Product {
 	length: number | null;
 	weight: number | null;
 	diameter: number | null;
+	price: number | null;
 	quantity_bag: number;
 	quantity_box: number;
 	images: string[] | null;

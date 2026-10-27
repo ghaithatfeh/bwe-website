@@ -68,6 +68,7 @@ export const FeaturedProductsSection = ({
 										image={product.images?.[0] || ""}
 										colors={normalizeColors(product.colors).slice(0, 3)}
 										additionalColors={product.additional_colors || 0}
+										price={product.price}
 										onClick={() => onProductClick(product)}
 									/>
 								</SwiperSlide>
@@ -89,6 +90,7 @@ export const FeaturedProductsSection = ({
 								image={product.images?.[0] || ""}
 								colors={normalizeColors(product.colors).slice(0, 3)}
 								additionalColors={product.additional_colors || 0}
+								price={product.price}
 								onClick={() => onProductClick(product)}
 							/>
 						))}

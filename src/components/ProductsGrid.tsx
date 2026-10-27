@@ -106,6 +106,7 @@ export const ProductsGrid = ({
 							image={product.primary_image_url || ""}
 							colors={normalizeColors(product.colors).slice(0, 3)}
 							additionalColors={product.additional_colors || 0}
+							price={product.price}
 							onClick={() => onProductClick(product)}
 						/>
 					))
