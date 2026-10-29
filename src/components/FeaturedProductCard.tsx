@@ -4,6 +4,8 @@ import { Card } from "@/components/ui/card";
 import { getColorName, getColorSwatchStyle, type ProductColor } from "@/lib/colors";
 import { formatPrice } from "@/lib/price";
 import { useLocale, useTranslations } from "next-intl";
+import AddToCartButton from "@/components/cart/AddToCartButton";
+import type { Product } from "@/types/product";
 
 interface FeaturedProductCardProps {
 	code: string;
@@ -17,6 +19,8 @@ interface FeaturedProductCardProps {
 	additionalColors?: number;
 	price?: number | null;
 	onClick?: () => void;
+	/** When set, an "Add to cart" button is shown. */
+	product?: Product;
 }
 
 const FeaturedProductCard = ({
@@ -31,6 +35,7 @@ const FeaturedProductCard = ({
 	additionalColors = 0,
 	price,
 	onClick,
+	product,
 }: FeaturedProductCardProps) => {
 	const t = useTranslations();
 	const locale = useLocale();
@@ -112,6 +117,12 @@ const FeaturedProductCard = ({
 									+{additionalColors}
 								</div>
 							)}
+						</div>
+					)}
+
+					{product && (
+						<div className="pt-4">
+							<AddToCartButton product={product} />
 						</div>
 					)}
 				</div>

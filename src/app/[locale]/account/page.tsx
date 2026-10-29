@@ -8,16 +8,24 @@ import PhoneOtpForm, { type AuthMode } from "@/components/auth/PhoneOtpForm";
 import SocialLogin from "@/components/auth/SocialLogin";
 import useSession from "@/hooks/useSession";
 import { useRouter } from "@/i18n/routing";
+import { safeNextPath } from "@/lib/auth";
 
 const AccountPage = () => {
 	const t = useTranslations("Auth");
 	const router = useRouter();
 	const { user } = useSession();
 	const [mode, setMode] = useState<AuthMode>("signin");
+	const [next, setNext] = useState("/profile");
+
+	// Read from window instead of useSearchParams, which would need a
+	// Suspense boundary in the static export.
+	useEffect(() => {
+		setNext(safeNextPath(new URLSearchParams(window.location.search).get("next")));
+	}, []);
 
 	useEffect(() => {
-		if (user) router.replace("/profile");
-	}, [user, router]);
+		if (user) router.replace(next);
+	}, [user, router, next]);
 
 	return (
 		<AuthLayout title={mode === "signup" ? t("signUp") : t("signIn")}>
@@ -33,10 +41,10 @@ const AccountPage = () => {
 					<p className="font-['Baloo_Bhaina_2',Helvetica] text-[#333333] text-base leading-6 text-center">
 						{mode === "signup" ? t("signUpSubtitle") : t("signInSubtitle")}
 					</p>
-					<PhoneOtpForm mode={mode} onModeChange={setMode} />
+					<PhoneOtpForm mode={mode} onModeChange={setMode} next={next} />
 				</motion.div>
 			</AnimatePresence>
-			<SocialLogin />
+			<SocialLogin next={next} />
 		</AuthLayout>
 	);
 };

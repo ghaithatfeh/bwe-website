@@ -18,7 +18,16 @@ export type AuthMode = "signin" | "signup";
  * code sent on WhatsApp. Sign-up and sign-in only differ in whether Supabase
  * may create the user.
  */
-const PhoneOtpForm = ({ mode, onModeChange }: { mode: AuthMode; onModeChange: (mode: AuthMode) => void }) => {
+const PhoneOtpForm = ({
+	mode,
+	onModeChange,
+	next = "/profile",
+}: {
+	mode: AuthMode;
+	onModeChange: (mode: AuthMode) => void;
+	/** In-site path to go to once verified, e.g. "/cart". */
+	next?: string;
+}) => {
 	const t = useTranslations("Auth");
 	const router = useRouter();
 
@@ -97,7 +106,7 @@ const PhoneOtpForm = ({ mode, onModeChange }: { mode: AuthMode; onModeChange: (m
 			setError(t(authErrorKey(error) === "genericError" ? "invalidCode" : authErrorKey(error)));
 			return;
 		}
-		router.replace("/profile");
+		router.replace(next);
 	};
 
 	const errorMessage = error && (

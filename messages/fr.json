@@ -124,6 +124,10 @@
         "profile": {
             "title": "Mon profil",
             "description": "Gérez les informations de votre compte Best World Emballage."
+        },
+        "cart": {
+            "title": "Mon panier",
+            "description": "Vérifiez votre panier et passez votre commande chez Best World Emballage."
         }
     },
     "Auth": {
@@ -170,5 +174,54 @@
         "tooManyRequests": "Trop de tentatives. Veuillez patienter une minute et réessayer.",
         "genericError": "Une erreur est survenue. Veuillez réessayer.",
         "socialLoginFailed": "La connexion a échoué ou a été annulée. Veuillez réessayer."
+    },
+    "Cart": {
+        "cart": "Panier",
+        "title": "Mon panier",
+        "addToCart": "Ajouter au panier",
+        "chooseColor": "Choisissez une couleur",
+        "colorRequired": "Veuillez choisir une couleur.",
+        "boxes": "Nombre de cartons",
+        "increase": "Ajouter un carton",
+        "decrease": "Retirer un carton",
+        "pcsPerBox": "{count} pcs par carton",
+        "pricePerBox": "{price} / carton",
+        "priceOnRequest": "Prix sur demande",
+        "total": "Total",
+        "added": "Ajouté à votre panier.",
+        "viewCart": "Voir le panier",
+        "empty": "Votre panier est vide.",
+        "browseProducts": "Voir les produits",
+        "remove": "Retirer",
+        "subtotal": "Sous-total",
+        "priceOnRequestNote": "Certains articles n'ont pas encore de prix. Nous vous confirmerons le prix final avant de préparer votre commande.",
+        "loading": "Chargement...",
+        "signInToOrder": "Connectez-vous pour commander",
+        "signInToOrderHint": "Votre panier est enregistré sur cet appareil. Connectez-vous ou créez un compte pour envoyer votre commande.",
+        "signInToOrderButton": "Se connecter / S'inscrire",
+        "deliveryDetails": "Informations de livraison",
+        "fullName": "Nom complet",
+        "phone": "Numéro de téléphone",
+        "address": "Adresse de livraison",
+        "notesOptional": "Remarques (facultatif)",
+        "placeOrder": "Passer la commande",
+        "placing": "Envoi de la commande...",
+        "fieldsRequired": "Veuillez renseigner votre nom, votre numéro de téléphone et votre adresse.",
+        "invalidPhone": "Veuillez saisir un numéro de téléphone valide.",
+        "orderError": "Votre commande n'a pas pu être envoyée. Veuillez réessayer.",
+        "orderPlaced": "Merci ! Votre commande n°{id} a été envoyée. Nous vous contacterons pour la confirmer.",
+        "myOrders": "Mes commandes",
+        "noOrders": "Vous n'avez encore passé aucune commande.",
+        "orderNumber": "Commande n°{id}",
+        "boxesCount": "{count, plural, one {# carton} other {# cartons}}",
+        "priceToConfirm": "Prix à confirmer"
+    },
+    "OrderStatus": {
+        "new": "Nouvelle",
+        "confirmed": "Confirmée",
+        "processing": "En préparation",
+        "delivering": "En livraison",
+        "completed": "Livrée",
+        "cancelled": "Annulée"
     }
 }

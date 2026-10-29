@@ -5,6 +5,8 @@ import { getColorName, getColorSwatchStyle, type ProductColor } from "@/lib/colo
 import { formatPrice } from "@/lib/price";
 import { useLocale, useTranslations } from "next-intl";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import AddToCartButton from "@/components/cart/AddToCartButton";
+import type { Product } from "@/types/product";
 
 interface ProductProps {
 	code: string;
@@ -14,6 +16,8 @@ interface ProductProps {
 	additionalColors?: number;
 	price?: number | null;
 	onClick?: () => void;
+	/** When set, an "Add to cart" button is shown. */
+	product?: Product;
 }
 
 const ProductCard = ({
@@ -24,6 +28,7 @@ const ProductCard = ({
 	additionalColors = 0,
 	price,
 	onClick,
+	product,
 }: ProductProps) => {
 	const t = useTranslations();
 	const locale = useLocale() as "en" | "ar" | "fr";
@@ -83,17 +88,21 @@ const ProductCard = ({
 					</p>
 				)}
 
-			{/* Learn More Link */}
-			<button
-				className="text-sm inline-flex text-[#232B55] font-semibold group-hover:gap-1 transition-all leading-[1.6]"
-			>
-				{t("Learn More")}
-				{locale === "ar" ? (
-					<ChevronLeft className="w-5 h-5 group-hover:-translate-x-1 transition-transform" />
-				) : (
-					<ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-				)}
-			</button>
+			<div className="flex flex-wrap items-center justify-between gap-3">
+				{/* Learn More Link */}
+				<button
+					className="text-sm inline-flex text-[#232B55] font-semibold group-hover:gap-1 transition-all leading-[1.6]"
+				>
+					{t("Learn More")}
+					{locale === "ar" ? (
+						<ChevronLeft className="w-5 h-5 group-hover:-translate-x-1 transition-transform" />
+					) : (
+						<ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+					)}
+				</button>
+
+				{product && <AddToCartButton product={product} />}
+			</div>
 			</div>
 		</Card>
 	);

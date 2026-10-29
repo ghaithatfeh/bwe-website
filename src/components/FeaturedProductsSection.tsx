@@ -70,6 +70,7 @@ export const FeaturedProductsSection = ({
 										additionalColors={product.additional_colors || 0}
 										price={product.price}
 										onClick={() => onProductClick(product)}
+										product={product}
 									/>
 								</SwiperSlide>
 							))}
@@ -92,6 +93,7 @@ export const FeaturedProductsSection = ({
 								additionalColors={product.additional_colors || 0}
 								price={product.price}
 								onClick={() => onProductClick(product)}
+								product={product}
 							/>
 						))}
 					</div>

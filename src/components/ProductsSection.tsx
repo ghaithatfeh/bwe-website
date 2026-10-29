@@ -75,6 +75,7 @@ const AboutSection = () => {
 									additionalColors={product.additional_colors || 0}
 									price={product.price}
 									onClick={() => handleProductClick(product)}
+									product={product}
 								/>
 							</SwiperSlide>
 						))}

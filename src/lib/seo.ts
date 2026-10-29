@@ -24,7 +24,7 @@ export function localeAlternates(locale: string, path = ""): NonNullable<Metadat
  * Localized title/description (from the `Meta.<page>` namespace in messages/*.json),
  * plus Open Graph and hreflang alternates, for a page under /[locale].
  */
-export async function pageMetadata(locale: string, page: "home" | "about" | "products" | "contact" | "account" | "profile", path = ""): Promise<Metadata> {
+export async function pageMetadata(locale: string, page: "home" | "about" | "products" | "contact" | "account" | "profile" | "cart", path = ""): Promise<Metadata> {
 	const t = await getTranslations({ locale, namespace: `Meta.${page}` });
 	const title = t("title");
 	const description = t("description");

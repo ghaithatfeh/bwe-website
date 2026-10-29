@@ -108,6 +108,7 @@ export const ProductsGrid = ({
 							additionalColors={product.additional_colors || 0}
 							price={product.price}
 							onClick={() => onProductClick(product)}
+							product={product}
 						/>
 					))
 				)}

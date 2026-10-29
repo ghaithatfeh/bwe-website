@@ -14,7 +14,8 @@ const PROVIDERS = {
 	facebook: { label: "continueWithFacebook", icon: <FaFacebook className="!size-5 text-[#1877F2]" /> },
 } as const;
 
-const SocialLogin = () => {
+/** `next` is the in-site path to return to after sign-in, e.g. "/cart". */
+const SocialLogin = ({ next = "/profile" }: { next?: string }) => {
 	const t = useTranslations("Auth");
 	const locale = useLocale();
 	const [pending, setPending] = useState<string | null>(null);
@@ -25,7 +26,7 @@ const SocialLogin = () => {
 		setPending(provider);
 		const { error } = await supabase.auth.signInWithOAuth({
 			provider,
-			options: { redirectTo: `${window.location.origin}/${locale}/profile/` },
+			options: { redirectTo: `${window.location.origin}/${locale}${next.replace(/\/$/, "")}/` },
 		});
 		// On success the browser is already navigating to the provider.
 		if (error) {

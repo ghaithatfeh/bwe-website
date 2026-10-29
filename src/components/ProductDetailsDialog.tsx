@@ -12,6 +12,7 @@ import { ChevronLeft, ChevronRight, X, Phone, Mail } from "lucide-react";
 import { Product } from "@/types/product";
 import { getColorName, getColorSwatchStyle, normalizeColors } from "@/lib/colors";
 import { formatPrice } from "@/lib/price";
+import AddToCartButton from "@/components/cart/AddToCartButton";
 
 interface ProductDetailsDialogProps {
 	open: boolean;
@@ -132,6 +133,8 @@ const ProductDetailsDialog = ({
 							{t("Price")}: {formatPrice(product.price, currentLocale)}
 						</p>
 					)}
+
+					<AddToCartButton product={product} variant="full" />
 
 					{/* Product Description */}
 					<div className="space-y-1">

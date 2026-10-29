@@ -124,6 +124,10 @@
         "profile": {
             "title": "My profile",
             "description": "Manage your Best World Emballage account information."
+        },
+        "cart": {
+            "title": "My cart",
+            "description": "Review your cart and place your order with Best World Emballage."
         }
     },
     "Auth": {
@@ -170,5 +174,54 @@
         "tooManyRequests": "Too many attempts. Please wait a minute and try again.",
         "genericError": "Something went wrong. Please try again.",
         "socialLoginFailed": "Social sign-in failed or was cancelled. Please try again."
+    },
+    "Cart": {
+        "cart": "Cart",
+        "title": "My cart",
+        "addToCart": "Add to cart",
+        "chooseColor": "Choose a color",
+        "colorRequired": "Please choose a color.",
+        "boxes": "Number of boxes",
+        "increase": "Add one box",
+        "decrease": "Remove one box",
+        "pcsPerBox": "{count} pcs per box",
+        "pricePerBox": "{price} / box",
+        "priceOnRequest": "Price on request",
+        "total": "Total",
+        "added": "Added to your cart.",
+        "viewCart": "View cart",
+        "empty": "Your cart is empty.",
+        "browseProducts": "Browse products",
+        "remove": "Remove",
+        "subtotal": "Subtotal",
+        "priceOnRequestNote": "Some items have no price yet. We will confirm the final price with you before preparing your order.",
+        "loading": "Loading...",
+        "signInToOrder": "Sign in to place your order",
+        "signInToOrderHint": "Your cart is saved on this device. Sign in or create an account to send your order.",
+        "signInToOrderButton": "Sign in / Sign up",
+        "deliveryDetails": "Delivery details",
+        "fullName": "Full name",
+        "phone": "Phone number",
+        "address": "Delivery address",
+        "notesOptional": "Notes (optional)",
+        "placeOrder": "Place order",
+        "placing": "Placing order...",
+        "fieldsRequired": "Please fill in your name, phone number and address.",
+        "invalidPhone": "Please enter a valid phone number.",
+        "orderError": "We couldn't place your order. Please try again.",
+        "orderPlaced": "Thank you! Your order #{id} has been placed. We will contact you to confirm it.",
+        "myOrders": "My orders",
+        "noOrders": "You haven't placed any orders yet.",
+        "orderNumber": "Order #{id}",
+        "boxesCount": "{count, plural, one {# box} other {# boxes}}",
+        "priceToConfirm": "Price to be confirmed"
+    },
+    "OrderStatus": {
+        "new": "New",
+        "confirmed": "Confirmed",
+        "processing": "Processing",
+        "delivering": "Out for delivery",
+        "completed": "Completed",
+        "cancelled": "Cancelled"
     }
 }

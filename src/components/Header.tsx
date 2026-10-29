@@ -15,6 +15,7 @@ import { cn } from "@/lib/utils";
 import { useLocale, useTranslations } from "next-intl";
 import useLinks from "@/hooks/useLinks";
 import useSession from "@/hooks/useSession";
+import CartButton from "@/components/cart/CartButton";
 
 const Header = () => {
 	const locale = useLocale();
@@ -105,6 +106,8 @@ const Header = () => {
 						</DropdownMenuContent>
 					</DropdownMenu>
 
+					<CartButton />
+
 					<Link
 						href={account.href}
 						className={cn([
@@ -118,6 +121,8 @@ const Header = () => {
 				</div>
 
 				{/* mobile menu */}
+				<div className="md:hidden flex items-center gap-5">
+				<CartButton />
 				<Sheet>
 					<SheetTrigger className="md:hidden outline-none">
 						<MenuIcon className="w-8 h-8 text-white text-3xl" />
@@ -214,6 +219,7 @@ const Header = () => {
 						</nav>
 					</SheetContent>
 				</Sheet>
+				</div>
 			</div>
 		</header>
 	);

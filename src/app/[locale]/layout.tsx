@@ -8,6 +8,7 @@ import { setRequestLocale } from "next-intl/server";
 import Footer from "@/components/Footer";
 import AuthRedirectError from "@/components/auth/AuthRedirectError";
 import { Toaster } from "react-hot-toast";
+import { CartProvider } from "@/context/CartContext";
 import { SITE_NAME, SITE_URL, pageMetadata } from "@/lib/seo";
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
@@ -43,11 +44,13 @@ export default async function RootLayout({
 		<html lang={locale}  dir={locale === "ar" ? "rtl" : "ltr"} className="scroll-smooth overflow-x-hidden md:overflow-x-visible">
 			<body className={`${balooBhaina2.variable} ${tajawal.variable} overflow-x-hidden md:overflow-x-visible`}>
 				<NextIntlClientProvider>
-					<Header />
-					{children}
-					<Toaster position="top-right" />
-					<AuthRedirectError />
-					<Footer />
+					<CartProvider>
+						<Header />
+						{children}
+						<Toaster position="top-right" />
+						<AuthRedirectError />
+						<Footer />
+					</CartProvider>
 				</NextIntlClientProvider>
 			</body>
 		</html>
