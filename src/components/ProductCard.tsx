@@ -91,13 +91,13 @@ const ProductCard = ({
 			<div className="flex flex-wrap items-center justify-between gap-3">
 				{/* Learn More Link */}
 				<button
-					className="text-sm inline-flex text-[#232B55] font-semibold group-hover:gap-1 transition-all leading-[1.6]"
+					className="mt-1.5 text-sm inline-flex text-[#232B55] font-semibold group-hover:gap-0.5 transition-all leading-[1.6]"
 				>
 					{t("Learn More")}
 					{locale === "ar" ? (
-						<ChevronLeft className="w-5 h-5 group-hover:-translate-x-1 transition-transform" />
+						<ChevronLeft className="w-5 h-5 group-hover:-translate-x-0.5 transition-transform" />
 					) : (
-						<ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+						<ChevronRight className="w-5 h-5 group-hover:translate-x-0.5 transition-transform" />
 					)}
 				</button>
 

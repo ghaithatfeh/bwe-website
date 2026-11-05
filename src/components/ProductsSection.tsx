@@ -15,7 +15,7 @@ import { useProducts } from "@/hooks/useProducts";
 import { ProductCardSkeleton } from "./skeletons/ProductCardSkeleton";
 import { normalizeColors } from "@/lib/colors";
 
-const AboutSection = () => {
+const ProductsSection = () => {
 	const t = useTranslations();
 	const locale = useLocale() as "en" | "ar" | "fr";
 	const [dialogOpen, setDialogOpen] = useState(false);
@@ -112,4 +112,4 @@ const AboutSection = () => {
 	);
 };
 
-export default AboutSection;
+export default ProductsSection;
