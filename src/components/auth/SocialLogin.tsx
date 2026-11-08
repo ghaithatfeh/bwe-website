@@ -7,7 +7,7 @@ import { FcGoogle } from "react-icons/fc";
 import { toast } from "react-hot-toast";
 import { Button } from "@/components/ui/button";
 import { supabase } from "@/integrations/supabase/client";
-import { SOCIAL_PROVIDERS } from "@/lib/auth";
+import { DEFAULT_AFTER_AUTH_PATH, SOCIAL_PROVIDERS } from "@/lib/auth";
 
 const PROVIDERS = {
 	google: { label: "continueWithGoogle", icon: <FcGoogle className="!size-5" /> },
@@ -15,7 +15,7 @@ const PROVIDERS = {
 } as const;
 
 /** `next` is the in-site path to return to after sign-in, e.g. "/cart". */
-const SocialLogin = ({ next = "/profile" }: { next?: string }) => {
+const SocialLogin = ({ next = DEFAULT_AFTER_AUTH_PATH }: { next?: string }) => {
 	const t = useTranslations("Auth");
 	const locale = useLocale();
 	const [pending, setPending] = useState<string | null>(null);

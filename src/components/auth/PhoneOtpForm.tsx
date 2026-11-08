@@ -7,7 +7,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { supabase } from "@/integrations/supabase/client";
 import { useRouter } from "@/i18n/routing";
-import { OTP_LENGTH, OTP_RESEND_SECONDS, authErrorKey, normalizePhone } from "@/lib/auth";
+import { DEFAULT_AFTER_AUTH_PATH, OTP_LENGTH, OTP_RESEND_SECONDS, authErrorKey, normalizePhone } from "@/lib/auth";
 
 const inputClassName = "h-12 bg-white rounded-2xl focus:border-[#ffc85b] focus-visible:ring-0";
 
@@ -21,7 +21,7 @@ export type AuthMode = "signin" | "signup";
 const PhoneOtpForm = ({
 	mode,
 	onModeChange,
-	next = "/profile",
+	next = DEFAULT_AFTER_AUTH_PATH,
 }: {
 	mode: AuthMode;
 	onModeChange: (mode: AuthMode) => void;

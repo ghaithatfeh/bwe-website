@@ -8,14 +8,14 @@ import PhoneOtpForm, { type AuthMode } from "@/components/auth/PhoneOtpForm";
 import SocialLogin from "@/components/auth/SocialLogin";
 import useSession from "@/hooks/useSession";
 import { useRouter } from "@/i18n/routing";
-import { safeNextPath } from "@/lib/auth";
+import { DEFAULT_AFTER_AUTH_PATH, safeNextPath } from "@/lib/auth";
 
 const AccountPage = () => {
 	const t = useTranslations("Auth");
 	const router = useRouter();
 	const { user } = useSession();
 	const [mode, setMode] = useState<AuthMode>("signin");
-	const [next, setNext] = useState("/profile");
+	const [next, setNext] = useState(DEFAULT_AFTER_AUTH_PATH);
 
 	// Read from window instead of useSearchParams, which would need a
 	// Suspense boundary in the static export.

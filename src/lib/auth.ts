@@ -29,7 +29,10 @@ export function formatPhone(phone: string | null | undefined): string {
  * Where to go after signing in, from the `?next=` query param. Only
  * locale-less in-site paths like "/cart" are accepted, never other origins.
  */
-export function safeNextPath(next: string | null | undefined, fallback = "/profile"): string {
+/** Where to go after signing in or up when no `next` path was given. */
+export const DEFAULT_AFTER_AUTH_PATH = "/products";
+
+export function safeNextPath(next: string | null | undefined, fallback = DEFAULT_AFTER_AUTH_PATH): string {
 	if (!next || !/^\/[a-z0-9\-/]*$/i.test(next) || next.startsWith("//")) return fallback;
 	return next;
 }
