@@ -18,10 +18,20 @@ import { Link, useRouter } from "@/i18n/routing";
 import { formatPhone, normalizePhone } from "@/lib/auth";
 import { lineKey, lineTotal } from "@/lib/cart";
 import { getColorName, getColorSwatchStyle } from "@/lib/colors";
+import { countryName } from "@/lib/countries";
 import { formatPrice } from "@/lib/price";
 
 const inputClassName = "h-12 bg-white rounded-2xl focus:border-[#ffc85b] focus-visible:ring-0";
 const labelClassName = "text-sm text-gray-600 ms-1";
+
+/** The profile's address line, then "city, country" on its own line. */
+const deliveryAddress = (
+	profile: { address: string | null; city: string | null; country: string | null },
+	locale: string
+) => {
+	const place = [profile.city, countryName(profile.country, locale)].filter(Boolean).join(", ");
+	return [profile.address, place].filter(Boolean).join("\n");
+};
 
 const CartPage = () => {
 	const t = useTranslations("Cart");
@@ -47,7 +57,7 @@ const CartPage = () => {
 		if (!userId) return;
 		supabase
 			.from("profiles")
-			.select("first_name, last_name, phone, address")
+			.select("first_name, last_name, phone, address, city, country")
 			.eq("id", userId)
 			.single()
 			.then(({ data }) => {
@@ -56,7 +66,7 @@ const CartPage = () => {
 					...f,
 					customer_name: f.customer_name || `${data.first_name} ${data.last_name}`.trim(),
 					phone: f.phone || formatPhone(data.phone),
-					address: f.address || (data.address ?? ""),
+					address: f.address || deliveryAddress(data, locale),
 				}));
 			});
 	}, [userId]);
@@ -103,7 +113,7 @@ const CartPage = () => {
 		}
 		clear();
 		toast.success(t("orderPlaced", { id: orderId }), { className: "p-4 bg-[#fffcf5]", duration: 6000 });
-		router.replace("/profile");
+		router.replace({ pathname: "/profile", query: { tab: "orders" } });
 	};
 
 	const renderItems = () => (

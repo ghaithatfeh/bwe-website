@@ -29,8 +29,7 @@ const MyOrders = () => {
 	const dateFormat = new Intl.DateTimeFormat(locale === "ar" ? "ar-MA" : `${locale}-MA`, { dateStyle: "medium" });
 
 	return (
-		<div className="flex flex-col gap-4 border-t pt-6">
-			<h2 className="text-xl font-bold text-[#333333]">{t("myOrders")}</h2>
+		<div className="flex flex-col gap-4">
 			{orders === null ? (
 				<p className="text-center text-gray-500">{t("loading")}</p>
 			) : orders.length === 0 ? (
